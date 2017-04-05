@@ -201,6 +201,20 @@
 
 			// STUB: Write your own AJAX call
 
+			$.ajax({
+				url: GRAFFITI_DATASET_URL,
+				data: {
+					'completion_date': '2017-03-31T00:00:00.000',
+					'status': 'Completed',
+					"what_type_of_surface_is_the_graffiti_on_": "Brick - Unpainted",
+					// '$limit': 5
+				},
+				success: function(data){
+					var oput = document.getElementById('output-brick-unpainted');
+					outputGraffiti(oput, data);
+				}
+			});
+
 			/*
 			 * Now make a GET request to: 'https://data.cityofchicago.org/resource/byhn-gzba.json'
 			 * Something will go wrong... you need to handle the error
